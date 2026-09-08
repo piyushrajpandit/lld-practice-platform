@@ -1,0 +1,598 @@
+[
+  {
+    "id": "1151c7dd-af65-4642-9ab2-3ec6b950079a",
+    "problemId": "parking-lot",
+    "learnerId": "default-learner",
+    "attemptNumber": 1,
+    "status": "COMPLETED",
+    "submission": {
+      "language": "typescript",
+      "code": "class Vehicle {}\nclass ParkingLot {}",
+      "designExplanation": "Parking lot system with single responsibility",
+      "classMappings": []
+    },
+    "feedbackReport": {
+      "overallScore": 51,
+      "grade": "NEEDS_REFINEMENT",
+      "summary": "Design evaluated with score 51/100 (NEEDS_REFINEMENT). Identified 2 potential design concerns.",
+      "criterionEvaluations": [
+        {
+          "criterionId": "req-coverage",
+          "criterionName": "Requirement Coverage & Completeness",
+          "score": 30,
+          "maxScore": 100,
+          "weight": 20,
+          "evidence": "Code lines: 2, Explanation length: 45 chars.",
+          "suggestion": "Expand on core method signatures and business logic assumptions."
+        },
+        {
+          "criterionId": "domain-modeling",
+          "criterionName": "Domain Entity Modeling",
+          "score": 29,
+          "maxScore": 100,
+          "weight": 25,
+          "evidence": "Identified 2/7 core concepts (Missing: Floor, ParkingSpot, ParkingTicket, PaymentProcessor, PricingStrategy).",
+          "suggestion": "Incorporate domain concepts: Floor, ParkingSpot, ParkingTicket, PaymentProcessor, PricingStrategy into your class hierarchy."
+        },
+        {
+          "criterionId": "abstraction-interfaces",
+          "criterionName": "Abstraction & Interface Design",
+          "score": 50,
+          "maxScore": 100,
+          "weight": 25,
+          "evidence": "Only concrete classes or plain text detected.",
+          "suggestion": "Decouple core dependencies using interfaces."
+        },
+        {
+          "criterionId": "srp-cohesion",
+          "criterionName": "Single Responsibility & Class Cohesion",
+          "score": 62,
+          "maxScore": 100,
+          "weight": 25,
+          "evidence": "Declared 2 distinct domain entities (Vehicle, ParkingLot).",
+          "concern": "Classes appear to take on multiple duties or lack clear responsibility boundaries.",
+          "suggestion": "Separate state management, business rules, and notification/payment handling into distinct classes."
+        },
+        {
+          "criterionId": "extensibility-ocp",
+          "criterionName": "Extensibility & SOLID Principles",
+          "score": 68,
+          "maxScore": 100,
+          "weight": 25,
+          "evidence": "Direct switch/if-else branching used for behavior variance.",
+          "suggestion": "Replace conditional branching (if/switch) with polymorphic interfaces to make future extensions zero-risk."
+        },
+        {
+          "criterionId": "coupling-dip",
+          "criterionName": "Loose Coupling & Dependency Inversion",
+          "score": 65,
+          "maxScore": 100,
+          "weight": 25,
+          "evidence": "Direct instantiation (new Keyword) inside high-level controllers.",
+          "concern": "High-level classes directly instantiate concrete dependencies using `new`.",
+          "suggestion": "Inject interfaces via constructors (DIP) rather than instantiating concrete classes internally."
+        },
+        {
+          "criterionId": "edge-cases-tradeoffs",
+          "criterionName": "Edge Cases & Trade-off Analysis",
+          "score": 60,
+          "maxScore": 100,
+          "weight": 25,
+          "evidence": "No concurrency or fail-safe logic documented.",
+          "suggestion": "Elaborate on what happens under high load, concurrency collisions, or system component downtime."
+        }
+      ],
+      "strengths": [
+        "Good initial structure and submission clarity."
+      ],
+      "antiPatterns": [
+        {
+          "name": "Incomplete Submission",
+          "description": "Submission has fewer than 10 lines of code and minimal design explanation.",
+          "howToFix": "Provide full class declarations and detail your design assumptions."
+        },
+        {
+          "name": "Unaddressed Concurrency & Edge Cases",
+          "description": "Design does not account for race conditions, concurrent requests, or hardware failure edge cases.",
+          "howToFix": "Document thread-safety mechanisms (e.g. Mutex locks, Atomic integer slots, or optimistic concurrency)."
+        }
+      ],
+      "recommendations": [
+        "Flesh out class contracts and design trade-offs before submitting.",
+        "Consider adding domain abstractions for: Floor, ParkingSpot, ParkingTicket, PaymentProcessor, PricingStrategy.",
+        "Apply the Strategy or Factory pattern to make pricing/routing algorithms easily extensible.",
+        "Address concurrent booking/payment access and edge case handling in your design trade-offs."
+      ],
+      "extensibilityAnalysis": "To satisfy extensibility challenge \"How would your design accommodate Electric Vehicle (EV) charging stations with hourly charging fees?\": Ensure class boundaries allow adding this requirement via polymorphism without modifying existing core classes (OCP).",
+      "evaluatorMetadata": {
+        "deterministicChecksPassed": 1,
+        "deterministicChecksTotal": 1,
+        "llmUsed": true,
+        "evaluatorVersion": "v1.0.0-hybrid"
+      }
+    },
+    "createdAt": "2026-09-08T16:09:49.885Z",
+    "updatedAt": "2026-09-08T16:09:50.073Z",
+    "evaluatedAt": "2026-09-08T16:09:50.073Z"
+  },
+  {
+    "id": "74be8ff7-beab-431a-b330-22dba8d2a28d",
+    "problemId": "parking-lot",
+    "learnerId": "default-learner",
+    "attemptNumber": 2,
+    "status": "COMPLETED",
+    "submission": {
+      "language": "typescript",
+      "code": "class Vehicle {}\nclass ParkingLot {}",
+      "designExplanation": "Parking lot system with single responsibility",
+      "classMappings": []
+    },
+    "feedbackReport": {
+      "overallScore": 51,
+      "grade": "NEEDS_REFINEMENT",
+      "summary": "Design evaluated with score 51/100 (NEEDS_REFINEMENT). Identified 2 potential design concerns.",
+      "criterionEvaluations": [
+        {
+          "criterionId": "req-coverage",
+          "criterionName": "Requirement Coverage & Completeness",
+          "score": 30,
+          "maxScore": 100,
+          "weight": 20,
+          "evidence": "Code lines: 2, Explanation length: 45 chars.",
+          "suggestion": "Expand on core method signatures and business logic assumptions."
+        },
+        {
+          "criterionId": "domain-modeling",
+          "criterionName": "Domain Entity Modeling",
+          "score": 29,
+          "maxScore": 100,
+          "weight": 25,
+          "evidence": "Identified 2/7 core concepts (Missing: Floor, ParkingSpot, ParkingTicket, PaymentProcessor, PricingStrategy).",
+          "suggestion": "Incorporate domain concepts: Floor, ParkingSpot, ParkingTicket, PaymentProcessor, PricingStrategy into your class hierarchy."
+        },
+        {
+          "criterionId": "abstraction-interfaces",
+          "criterionName": "Abstraction & Interface Design",
+          "score": 50,
+          "maxScore": 100,
+          "weight": 25,
+          "evidence": "Only concrete classes or plain text detected.",
+          "suggestion": "Decouple core dependencies using interfaces."
+        },
+        {
+          "criterionId": "srp-cohesion",
+          "criterionName": "Single Responsibility & Class Cohesion",
+          "score": 62,
+          "maxScore": 100,
+          "weight": 25,
+          "evidence": "Declared 2 distinct domain entities (Vehicle, ParkingLot).",
+          "concern": "Classes appear to take on multiple duties or lack clear responsibility boundaries.",
+          "suggestion": "Separate state management, business rules, and notification/payment handling into distinct classes."
+        },
+        {
+          "criterionId": "extensibility-ocp",
+          "criterionName": "Extensibility & SOLID Principles",
+          "score": 68,
+          "maxScore": 100,
+          "weight": 25,
+          "evidence": "Direct switch/if-else branching used for behavior variance.",
+          "suggestion": "Replace conditional branching (if/switch) with polymorphic interfaces to make future extensions zero-risk."
+        },
+        {
+          "criterionId": "coupling-dip",
+          "criterionName": "Loose Coupling & Dependency Inversion",
+          "score": 65,
+          "maxScore": 100,
+          "weight": 25,
+          "evidence": "Direct instantiation (new Keyword) inside high-level controllers.",
+          "concern": "High-level classes directly instantiate concrete dependencies using `new`.",
+          "suggestion": "Inject interfaces via constructors (DIP) rather than instantiating concrete classes internally."
+        },
+        {
+          "criterionId": "edge-cases-tradeoffs",
+          "criterionName": "Edge Cases & Trade-off Analysis",
+          "score": 60,
+          "maxScore": 100,
+          "weight": 25,
+          "evidence": "No concurrency or fail-safe logic documented.",
+          "suggestion": "Elaborate on what happens under high load, concurrency collisions, or system component downtime."
+        }
+      ],
+      "strengths": [
+        "Good initial structure and submission clarity."
+      ],
+      "antiPatterns": [
+        {
+          "name": "Incomplete Submission",
+          "description": "Submission has fewer than 10 lines of code and minimal design explanation.",
+          "howToFix": "Provide full class declarations and detail your design assumptions."
+        },
+        {
+          "name": "Unaddressed Concurrency & Edge Cases",
+          "description": "Design does not account for race conditions, concurrent requests, or hardware failure edge cases.",
+          "howToFix": "Document thread-safety mechanisms (e.g. Mutex locks, Atomic integer slots, or optimistic concurrency)."
+        }
+      ],
+      "recommendations": [
+        "Flesh out class contracts and design trade-offs before submitting.",
+        "Consider adding domain abstractions for: Floor, ParkingSpot, ParkingTicket, PaymentProcessor, PricingStrategy.",
+        "Apply the Strategy or Factory pattern to make pricing/routing algorithms easily extensible.",
+        "Address concurrent booking/payment access and edge case handling in your design trade-offs."
+      ],
+      "extensibilityAnalysis": "To satisfy extensibility challenge \"How would your design accommodate Electric Vehicle (EV) charging stations with hourly charging fees?\": Ensure class boundaries allow adding this requirement via polymorphism without modifying existing core classes (OCP).",
+      "evaluatorMetadata": {
+        "deterministicChecksPassed": 1,
+        "deterministicChecksTotal": 1,
+        "llmUsed": true,
+        "evaluatorVersion": "v1.0.0-hybrid"
+      }
+    },
+    "createdAt": "2026-09-08T16:10:05.623Z",
+    "updatedAt": "2026-09-08T16:10:05.750Z",
+    "evaluatedAt": "2026-09-08T16:10:05.750Z"
+  },
+  {
+    "id": "8c22ce13-7e8d-4415-baff-161dc9bca683",
+    "problemId": "parking-lot",
+    "learnerId": "default-learner",
+    "attemptNumber": 3,
+    "status": "COMPLETED",
+    "submission": {
+      "language": "typescript",
+      "code": "class Vehicle {}\nclass ParkingLot {}",
+      "designExplanation": "Parking lot system with single responsibility",
+      "classMappings": []
+    },
+    "feedbackReport": {
+      "overallScore": 51,
+      "grade": "NEEDS_REFINEMENT",
+      "summary": "Design evaluated with score 51/100 (NEEDS_REFINEMENT). Identified 2 potential design concerns.",
+      "criterionEvaluations": [
+        {
+          "criterionId": "req-coverage",
+          "criterionName": "Requirement Coverage & Completeness",
+          "score": 30,
+          "maxScore": 100,
+          "weight": 20,
+          "evidence": "Code lines: 2, Explanation length: 45 chars.",
+          "suggestion": "Expand on core method signatures and business logic assumptions."
+        },
+        {
+          "criterionId": "domain-modeling",
+          "criterionName": "Domain Entity Modeling",
+          "score": 29,
+          "maxScore": 100,
+          "weight": 25,
+          "evidence": "Identified 2/7 core concepts (Missing: Floor, ParkingSpot, ParkingTicket, PaymentProcessor, PricingStrategy).",
+          "suggestion": "Incorporate domain concepts: Floor, ParkingSpot, ParkingTicket, PaymentProcessor, PricingStrategy into your class hierarchy."
+        },
+        {
+          "criterionId": "abstraction-interfaces",
+          "criterionName": "Abstraction & Interface Design",
+          "score": 50,
+          "maxScore": 100,
+          "weight": 25,
+          "evidence": "Only concrete classes or plain text detected.",
+          "suggestion": "Decouple core dependencies using interfaces."
+        },
+        {
+          "criterionId": "srp-cohesion",
+          "criterionName": "Single Responsibility & Class Cohesion",
+          "score": 62,
+          "maxScore": 100,
+          "weight": 25,
+          "evidence": "Declared 2 distinct domain entities (Vehicle, ParkingLot).",
+          "concern": "Classes appear to take on multiple duties or lack clear responsibility boundaries.",
+          "suggestion": "Separate state management, business rules, and notification/payment handling into distinct classes."
+        },
+        {
+          "criterionId": "extensibility-ocp",
+          "criterionName": "Extensibility & SOLID Principles",
+          "score": 68,
+          "maxScore": 100,
+          "weight": 25,
+          "evidence": "Direct switch/if-else branching used for behavior variance.",
+          "suggestion": "Replace conditional branching (if/switch) with polymorphic interfaces to make future extensions zero-risk."
+        },
+        {
+          "criterionId": "coupling-dip",
+          "criterionName": "Loose Coupling & Dependency Inversion",
+          "score": 65,
+          "maxScore": 100,
+          "weight": 25,
+          "evidence": "Direct instantiation (new Keyword) inside high-level controllers.",
+          "concern": "High-level classes directly instantiate concrete dependencies using `new`.",
+          "suggestion": "Inject interfaces via constructors (DIP) rather than instantiating concrete classes internally."
+        },
+        {
+          "criterionId": "edge-cases-tradeoffs",
+          "criterionName": "Edge Cases & Trade-off Analysis",
+          "score": 60,
+          "maxScore": 100,
+          "weight": 25,
+          "evidence": "No concurrency or fail-safe logic documented.",
+          "suggestion": "Elaborate on what happens under high load, concurrency collisions, or system component downtime."
+        }
+      ],
+      "strengths": [
+        "Good initial structure and submission clarity."
+      ],
+      "antiPatterns": [
+        {
+          "name": "Incomplete Submission",
+          "description": "Submission has fewer than 10 lines of code and minimal design explanation.",
+          "howToFix": "Provide full class declarations and detail your design assumptions."
+        },
+        {
+          "name": "Unaddressed Concurrency & Edge Cases",
+          "description": "Design does not account for race conditions, concurrent requests, or hardware failure edge cases.",
+          "howToFix": "Document thread-safety mechanisms (e.g. Mutex locks, Atomic integer slots, or optimistic concurrency)."
+        }
+      ],
+      "recommendations": [
+        "Flesh out class contracts and design trade-offs before submitting.",
+        "Consider adding domain abstractions for: Floor, ParkingSpot, ParkingTicket, PaymentProcessor, PricingStrategy.",
+        "Apply the Strategy or Factory pattern to make pricing/routing algorithms easily extensible.",
+        "Address concurrent booking/payment access and edge case handling in your design trade-offs."
+      ],
+      "extensibilityAnalysis": "To satisfy extensibility challenge \"How would your design accommodate Electric Vehicle (EV) charging stations with hourly charging fees?\": Ensure class boundaries allow adding this requirement via polymorphism without modifying existing core classes (OCP).",
+      "evaluatorMetadata": {
+        "deterministicChecksPassed": 1,
+        "deterministicChecksTotal": 1,
+        "llmUsed": true,
+        "evaluatorVersion": "v1.0.0-hybrid"
+      }
+    },
+    "createdAt": "2026-09-08T16:11:36.555Z",
+    "updatedAt": "2026-09-08T16:11:36.712Z",
+    "evaluatedAt": "2026-09-08T16:11:36.712Z"
+  },
+  {
+    "id": "642a32ad-a5ce-474b-babf-9af19806e157",
+    "problemId": "parking-lot",
+    "learnerId": "default-learner",
+    "attemptNumber": 4,
+    "status": "COMPLETED",
+    "submission": {
+      "language": "typescript",
+      "code": "// Starter TypeScript Template for Parking Lot\nexport enum VehicleType {\n  MOTORCYCLE,\n  CAR,\n  SUV,\n  TRUCK\n}\n\nexport enum SpotType {\n  COMPACT,\n  LARGE,\n  HANDICAP,\n  ELECTRIC\n}\n\nexport class Vehicle {\n  constructor(public licensePlate: string, public type: VehicleType) {}\n}\n\nexport class ParkingTicket {\n  constructor(\n    public ticketId: string,\n    public vehicle: Vehicle,\n    public spotId: string,\n    public entryTime: Date\n  ) {}\n}\n\nexport class ParkingSpot {\n  constructor(public id: string, public type: SpotType, public isOccupied: boolean = false) {}\n}\n\nexport class ParkingLot {\n  // TODO: Implement floors, spot assignment strategy, and exit fee calculation\n}\n",
+      "designExplanation": "### Design Assumptions & Trade-offs\n- Class encapsulation separating core domain objects from controllers.\n- Strategy pattern used for extensible business rules.\n- Handled potential concurrency edge cases using locking/synchronization.",
+      "classMappings": [
+        {
+          "className": "ParkingLot",
+          "responsibility": "Manages floors and orchestrates spot allocation facade."
+        },
+        {
+          "className": "ParkingSpot",
+          "responsibility": "Encapsulates spot state and vehicle occupancy."
+        },
+        {
+          "className": "PaymentProcessor",
+          "responsibility": "Handles fee calculation and ticket checkout."
+        }
+      ],
+      "diagramSyntax": "classDiagram\n    class ParkingLot {\n      +assignSpot(Vehicle)\n      +processPayment(ParkingTicket)\n    }\n    class ParkingSpot {\n      +isOccupied: boolean\n    }\n    ParkingLot --> ParkingSpot"
+    },
+    "feedbackReport": {
+      "overallScore": 76,
+      "grade": "GOOD",
+      "summary": "Design evaluated with score 76/100 (GOOD). Identified 1 potential design concerns.",
+      "criterionEvaluations": [
+        {
+          "criterionId": "req-coverage",
+          "criterionName": "Requirement Coverage & Completeness",
+          "score": 100,
+          "maxScore": 100,
+          "weight": 20,
+          "evidence": "Code lines: 30, Explanation length: 235 chars.",
+          "suggestion": "Good submission volume."
+        },
+        {
+          "criterionId": "domain-modeling",
+          "criterionName": "Domain Entity Modeling",
+          "score": 71,
+          "maxScore": 100,
+          "weight": 25,
+          "evidence": "Identified 5/7 core concepts (Missing: PaymentProcessor, PricingStrategy).",
+          "suggestion": "Incorporate domain concepts: PaymentProcessor, PricingStrategy into your class hierarchy."
+        },
+        {
+          "criterionId": "abstraction-interfaces",
+          "criterionName": "Abstraction & Interface Design",
+          "score": 50,
+          "maxScore": 100,
+          "weight": 25,
+          "evidence": "Only concrete classes or plain text detected.",
+          "suggestion": "Decouple core dependencies using interfaces."
+        },
+        {
+          "criterionId": "srp-cohesion",
+          "criterionName": "Single Responsibility & Class Cohesion",
+          "score": 88,
+          "maxScore": 100,
+          "weight": 25,
+          "evidence": "Declared 6 distinct domain entities (VehicleType, SpotType, Vehicle, ParkingTicket, ParkingSpot, ParkingLot).",
+          "suggestion": "Well-separated responsibilities across classes."
+        },
+        {
+          "criterionId": "extensibility-ocp",
+          "criterionName": "Extensibility & SOLID Principles",
+          "score": 92,
+          "maxScore": 100,
+          "weight": 25,
+          "evidence": "Design patterns and interface abstractions detected.",
+          "suggestion": "Solid adherence to OCP (Open-Closed Principle)."
+        },
+        {
+          "criterionId": "coupling-dip",
+          "criterionName": "Loose Coupling & Dependency Inversion",
+          "score": 65,
+          "maxScore": 100,
+          "weight": 25,
+          "evidence": "Direct instantiation (new Keyword) inside high-level controllers.",
+          "concern": "High-level classes directly instantiate concrete dependencies using `new`.",
+          "suggestion": "Inject interfaces via constructors (DIP) rather than instantiating concrete classes internally."
+        },
+        {
+          "criterionId": "edge-cases-tradeoffs",
+          "criterionName": "Edge Cases & Trade-off Analysis",
+          "score": 85,
+          "maxScore": 100,
+          "weight": 25,
+          "evidence": "Concurrency and edge case keywords present in solution.",
+          "suggestion": "Clear trade-off reasoning."
+        }
+      ],
+      "strengths": [
+        "Submission contains sufficient structural detail for architectural review.",
+        "Demonstrates appropriate design pattern usage (e.g. Strategy/Factory/State) to support Open-Closed Principle (OCP).",
+        "Includes explicit considerations for concurrency, locking, or failure recovery."
+      ],
+      "antiPatterns": [
+        {
+          "name": "Concrete Class Overuse",
+          "description": "Design relies entirely on concrete classes without abstractions or interfaces.",
+          "howToFix": "Define interfaces for extensible behaviors (e.g., PaymentStrategy, PricingPolicy, Strategy Pattern)."
+        }
+      ],
+      "recommendations": [
+        "Consider adding domain abstractions for: PaymentProcessor, PricingStrategy.",
+        "Introduce interfaces to decouple concrete implementations."
+      ],
+      "extensibilityAnalysis": "To satisfy extensibility challenge \"How would your design accommodate Electric Vehicle (EV) charging stations with hourly charging fees?\": Ensure class boundaries allow adding this requirement via polymorphism without modifying existing core classes (OCP).",
+      "evaluatorMetadata": {
+        "deterministicChecksPassed": 1,
+        "deterministicChecksTotal": 1,
+        "llmUsed": true,
+        "evaluatorVersion": "v1.0.0-hybrid"
+      }
+    },
+    "createdAt": "2026-09-08T16:14:57.440Z",
+    "updatedAt": "2026-09-08T16:14:57.959Z",
+    "evaluatedAt": "2026-09-08T16:14:57.959Z"
+  },
+  {
+    "id": "68788dec-b611-4d05-98cf-8485b209ac64",
+    "problemId": "parking-lot",
+    "learnerId": "default-learner",
+    "attemptNumber": 5,
+    "status": "COMPLETED",
+    "submission": {
+      "language": "typescript",
+      "code": "// Starter TypeScript Template for Parking Lot\nexport enum VehicleType {\n  MOTORCYCLE,\n  CAR,\n  SUV,\n  TRUCK\n}\n\nexport enum SpotType {\n  COMPACT,\n  LARGE,\n  HANDICAP,\n  ELECTRIC\n}\n\nexport class Vehicle {\n  constructor(public licensePlate: string, public type: VehicleType) {}\n}\n\nexport class ParkingTicket {\n  constructor(\n    public ticketId: string,\n    public vehicle: Vehicle,\n    public spotId: string,\n    public entryTime: Date\n  ) {}\n}\n\nexport class ParkingSpot {\n  constructor(public id: string, public type: SpotType, public isOccupied: boolean = false) {}\n}\n\nexport class ParkingLot {\n  // TODO: Implement floors, spot assignment strategy, and exit fee calculation\n}\n",
+      "designExplanation": "### Design Assumptions & Trade-offs\n- Class encapsulation separating core domain objects from controllers.\n- Strategy pattern used for extensible business rules.\n- Handled potential concurrency edge cases using locking/synchronization.",
+      "classMappings": [
+        {
+          "className": "ParkingLot",
+          "responsibility": "Manages floors and orchestrates spot allocation facade."
+        },
+        {
+          "className": "ParkingSpot",
+          "responsibility": "Encapsulates spot state and vehicle occupancy."
+        },
+        {
+          "className": "PaymentProcessor",
+          "responsibility": "Handles fee calculation and ticket checkout."
+        }
+      ],
+      "diagramSyntax": "classDiagram\n    class ParkingLot {\n      +assignSpot(Vehicle)\n      +processPayment(ParkingTicket)\n    }\n    class ParkingSpot {\n      +isOccupied: boolean\n    }\n    ParkingLot --> ParkingSpot"
+    },
+    "feedbackReport": {
+      "overallScore": 76,
+      "grade": "GOOD",
+      "summary": "Design evaluated with score 76/100 (GOOD). Identified 1 potential design concerns.",
+      "criterionEvaluations": [
+        {
+          "criterionId": "req-coverage",
+          "criterionName": "Requirement Coverage & Completeness",
+          "score": 100,
+          "maxScore": 100,
+          "weight": 20,
+          "evidence": "Code lines: 30, Explanation length: 235 chars.",
+          "suggestion": "Good submission volume."
+        },
+        {
+          "criterionId": "domain-modeling",
+          "criterionName": "Domain Entity Modeling",
+          "score": 71,
+          "maxScore": 100,
+          "weight": 25,
+          "evidence": "Identified 5/7 core concepts (Missing: PaymentProcessor, PricingStrategy).",
+          "suggestion": "Incorporate domain concepts: PaymentProcessor, PricingStrategy into your class hierarchy."
+        },
+        {
+          "criterionId": "abstraction-interfaces",
+          "criterionName": "Abstraction & Interface Design",
+          "score": 50,
+          "maxScore": 100,
+          "weight": 25,
+          "evidence": "Only concrete classes or plain text detected.",
+          "suggestion": "Decouple core dependencies using interfaces."
+        },
+        {
+          "criterionId": "srp-cohesion",
+          "criterionName": "Single Responsibility & Class Cohesion",
+          "score": 88,
+          "maxScore": 100,
+          "weight": 25,
+          "evidence": "Declared 6 distinct domain entities (VehicleType, SpotType, Vehicle, ParkingTicket, ParkingSpot, ParkingLot).",
+          "suggestion": "Well-separated responsibilities across classes."
+        },
+        {
+          "criterionId": "extensibility-ocp",
+          "criterionName": "Extensibility & SOLID Principles",
+          "score": 92,
+          "maxScore": 100,
+          "weight": 25,
+          "evidence": "Design patterns and interface abstractions detected.",
+          "suggestion": "Solid adherence to OCP (Open-Closed Principle)."
+        },
+        {
+          "criterionId": "coupling-dip",
+          "criterionName": "Loose Coupling & Dependency Inversion",
+          "score": 65,
+          "maxScore": 100,
+          "weight": 25,
+          "evidence": "Direct instantiation (new Keyword) inside high-level controllers.",
+          "concern": "High-level classes directly instantiate concrete dependencies using `new`.",
+          "suggestion": "Inject interfaces via constructors (DIP) rather than instantiating concrete classes internally."
+        },
+        {
+          "criterionId": "edge-cases-tradeoffs",
+          "criterionName": "Edge Cases & Trade-off Analysis",
+          "score": 85,
+          "maxScore": 100,
+          "weight": 25,
+          "evidence": "Concurrency and edge case keywords present in solution.",
+          "suggestion": "Clear trade-off reasoning."
+        }
+      ],
+      "strengths": [
+        "Submission contains sufficient structural detail for architectural review.",
+        "Demonstrates appropriate design pattern usage (e.g. Strategy/Factory/State) to support Open-Closed Principle (OCP).",
+        "Includes explicit considerations for concurrency, locking, or failure recovery."
+      ],
+      "antiPatterns": [
+        {
+          "name": "Concrete Class Overuse",
+          "description": "Design relies entirely on concrete classes without abstractions or interfaces.",
+          "howToFix": "Define interfaces for extensible behaviors (e.g., PaymentStrategy, PricingPolicy, Strategy Pattern)."
+        }
+      ],
+      "recommendations": [
+        "Consider adding domain abstractions for: PaymentProcessor, PricingStrategy.",
+        "Introduce interfaces to decouple concrete implementations."
+      ],
+      "extensibilityAnalysis": "To satisfy extensibility challenge \"How would your design accommodate Electric Vehicle (EV) charging stations with hourly charging fees?\": Ensure class boundaries allow adding this requirement via polymorphism without modifying existing core classes (OCP).",
+      "evaluatorMetadata": {
+        "deterministicChecksPassed": 1,
+        "deterministicChecksTotal": 1,
+        "llmUsed": true,
+        "evaluatorVersion": "v1.0.0-hybrid"
+      }
+    },
+    "createdAt": "2026-09-08T16:20:02.630Z",
+    "updatedAt": "2026-09-08T16:20:02.929Z",
+    "evaluatedAt": "2026-09-08T16:20:02.929Z"
+  }
+]
